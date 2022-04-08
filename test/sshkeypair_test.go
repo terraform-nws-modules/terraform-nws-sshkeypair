@@ -27,9 +27,6 @@ func TestNwsSshKeypairExample(t *testing.T) {
 	terraform.InitAndApply(t, terraformOptions)
 
 	act_name := terraform.Output(t, terraformOptions, "id")
-	fingerprint := terraform.Output(t, terraformOptions, "fingerprint")
 
 	assert.Equal(t, exp_name, act_name)
-	assert.NotEmpty(t, fingerprint)
-	assert.NotNil(t, fingerprint)
 }
